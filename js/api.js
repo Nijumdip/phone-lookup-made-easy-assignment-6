@@ -19,6 +19,7 @@ const phoneDetails = document.getElementById('phone-details');
             searchFeild.value = '';
             error.innerText = '';
             mainDiv.innerHTML = '';
+            phoneDetails.innerHTML = '';
         }
     };
     const displayPhones = phones => {
@@ -52,7 +53,6 @@ const phoneDetails = document.getElementById('phone-details');
             .then(data => displayPhoneDetail(data.data))
     }
     const displayPhoneDetail = phone => {
-        // const phoneDetails = document.getElementById('phone-details');
         const div = document.createElement('div');
         div.classList.add("d-flex", "justify-content-center");
         div.innerHTML = `
