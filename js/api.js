@@ -21,12 +21,14 @@ const mainDiv = document.getElementById('main-one');
     };
     const displayPhones = phones => {
         // console.log(phones);
+        const first20Phones = phones.slice(0, 20);
+        console.log(first20Phones);
         /* if (phones.length == 0) {
             error.innerText = 'show no result found';
         }
         else { }*/
-        for (const phone of phones) {
-            console.log(phone);
+        for (const phone of first20Phones) {
+            // console.log(phone);
             const div = document.createElement('div');               
             div.classList.add("col-lg-4", 'col-sm-1');
             div.classList.add("mb-5", 'mt-5');
@@ -44,7 +46,7 @@ const mainDiv = document.getElementById('main-one');
         };
     };
     const loadPhoneDetail = phoneId => {
-        console.log(phoneId);
+        // console.log(phoneId);
        const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
         fetch(url)
             .then(res => res.json())
