@@ -32,7 +32,7 @@ const mainDiv = document.getElementById('main-one');
                     <div class="card p-2 rounded " style="width: 100%">
                         <img src="${phone.image}" class="card-img-top" alt="...">
                         <div class="card-body">
-                                <h5 class="card-title">${phone.phone_name}</h5>
+                                <h4 class="card-title">${phone.phone_name}</h4>
                                 <p class="card-text">${phone.brand}</p>
                                 <button onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary">See Details</button>
                         </div>
@@ -49,7 +49,8 @@ const mainDiv = document.getElementById('main-one');
             .then(res => res.json())
             .then(data => displayPhoneDetail(data.data))
     }
-    const displayPhoneDetail = phone => {
+const displayPhoneDetail = phone => {
+        // console.log(phone);
         const phoneDetails = document.getElementById('phone-details');
         const div = document.createElement('div');
         div.classList.add("d-flex", "justify-content-center");
@@ -57,19 +58,31 @@ const mainDiv = document.getElementById('main-one');
             <div class="card p-2 rounded single-card">
                 <img src=" ${phone.image} " class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"> ${phone.slug} </h5>
-                    <h6>${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}
+                    <h4 class="card-title"> ${phone.slug} </h4>
+                    <h6> <b>ReleaseDate:</b> ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}
                     </h6>
-                    <p> ${phone.mainFeatures.storage} </p>
-                    <p> ${phone.mainFeatures.displaySize} </p>
-                    <p> ${phone.mainFeatures.chipSet} </p>
-                    <p> ${phone.mainFeatures.memory} </p>
+                    <p> <b> MainFeatures: </b> <br/>
+                        Storage: ${phone.mainFeatures.storage}. <br/>
+                        DisplaySize: ${phone.mainFeatures.displaySize}. <br/>
+                        ChipSet: ${phone.mainFeatures.chipSet}. <br/>
+                        Memory: ${phone.mainFeatures.memory}. <br/>
+                    </p>
+                    <p> <b> Sensors:</b> <br/>
+                        ${phone.mainFeatures.sensors[0]}. <br/>
+                        ${phone.mainFeatures.sensors[1]}. <br/>
+                        ${phone.mainFeatures.sensors[2]}. <br/>
+                        ${phone.mainFeatures.sensors[3]}. <br/>
+                        ${phone.mainFeatures.sensors[4]}. <br/>
+                    </p>
 
-                    <p> ${phone.mainFeatures.sensors[0]} </p>
-                    <p> ${phone.mainFeatures.sensors[1]} </p>
-                    <p> ${phone.mainFeatures.sensors[2]} </p>
-                    <p> ${phone.mainFeatures.sensors[3]} </p>
-                    <p> ${phone.mainFeatures.sensors[4]} </p>
+                    <p> <b> Others: </b> <br>
+                        WLAN: ${phone.others.WLAN}. <br/> 
+                        Bluetooth: ${phone.others.Bluetooth}. <br/> 
+                        GPS: ${phone.others.GPS}. <br/>
+                        NFC: ${phone.others.NFC}. <br/> 
+                        Radio: ${phone.others.Radio}. <br/> 
+                        USB: ${phone.others.USB}. 
+                    </p>
                 </div>
             </div>
         `;
