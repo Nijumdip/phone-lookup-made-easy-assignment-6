@@ -58,32 +58,31 @@ const phoneDetails = document.getElementById('phone-details');
         div.classList.add("d-flex", "justify-content-center");
         div.innerHTML = `
             <div class="card p-2 rounded single-card">
-                <img src=" ${phone.image} " class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title"> ${phone.slug} </h4>
-                    <h6> <b>ReleaseDate:</b> ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}
+                <img src=" ${phone?.image} " class="card-img-top" alt="...">
+                <div id="others" class="card-body">
+                    <h4 class="card-title"> ${phone?.slug} </h4>
+                    <h6> <b>ReleaseDate:</b> ${phone?.releaseDate ? phone?.releaseDate : 'No Release Date Found'}
                     </h6>
                     <p> <b> MainFeatures: </b> <br/>
-                        Storage: ${phone.mainFeatures.storage}. <br/>
-                        DisplaySize: ${phone.mainFeatures.displaySize}. <br/>
-                        ChipSet: ${phone.mainFeatures.chipSet}. <br/>
-                        Memory: ${phone.mainFeatures.memory}. 
+                        Storage: ${phone?.mainFeatures?.storage}. <br/>
+                        DisplaySize: ${phone?.mainFeatures?.displaySize}. <br/>
+                        ChipSet: ${phone?.mainFeatures?.chipSet}. <br/>
+                        Memory: ${phone?.mainFeatures?.memory}. 
                     </p>
                     <p> <b> Sensors:</b> <br/>
-                        ${phone.mainFeatures.sensors[0]}.
-                        ${phone.mainFeatures.sensors[1]}.
-                        ${phone.mainFeatures.sensors[2]}.
-                        ${phone.mainFeatures.sensors[3]}. 
-                        ${phone.mainFeatures.sensors[4]}. 
+                        ${phone?.mainFeatures?.sensors[0]}.
+                        ${phone?.mainFeatures?.sensors[1]}.
+                        ${phone?.mainFeatures?.sensors[2]}.
+                        ${phone?.mainFeatures?.sensors[3]}. 
+                        ${phone?.mainFeatures?.sensors[4]}. 
                     </p>
-
-                    <p> <b> Others: </b> <br>
-                        WLAN: ${phone.others.WLAN}. <br/> 
-                        Bluetooth: ${phone.others.Bluetooth}. <br/> 
-                        GPS: ${phone.others.GPS}. <br/>
-                        NFC: ${phone.others.NFC}. <br/> 
-                        Radio: ${phone.others.Radio}. <br/> 
-                        USB: ${phone.others.USB}. 
+                    <p> <b> Others: </b> <br> 
+                        WLAN: ${phone?.others?.WLAN}. <br/> 
+                        Bluetooth: ${phone?.others?.Bluetooth}. <br/> 
+                        GPS: ${phone?.others?.GPS}. <br/>
+                        NFC: ${phone?.others?.NFC}. <br/> 
+                        Radio: ${phone?.others?.Radio}. <br/> 
+                        USB: ${phone?.others?.USB}. 
                     </p>
                 </div>
             </div>
@@ -91,3 +90,4 @@ const phoneDetails = document.getElementById('phone-details');
         phoneDetails.appendChild(div);
         // mainDiv.innerHTML = '';
     };
+        
