@@ -39,6 +39,7 @@ const mainDiv = document.getElementById('main-one');
                     </div>
                 `;
                 mainDiv.appendChild(div);
+                error.innerText = '';
             };
         }
     };
