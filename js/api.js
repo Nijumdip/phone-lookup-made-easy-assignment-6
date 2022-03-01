@@ -13,13 +13,13 @@ const mainDiv = document.getElementById('main-one');
             const url = `https://openapi.programming-hero.com/api/phones?search=${searchFeildText}`
             fetch(url)
                 .then(res => res.json())
-                .then(data => displayPhone(data.data));
+                .then(data => displayPhones(data.data));
             searchFeild.value = '';
             error.innerText = '';
             mainDiv.innerHTML = '';
         }
     };
-    const displayPhone = phones => {
+    const displayPhones = phones => {
         // console.log(phones);
         /* if (phones.length == 0) {
             error.innerText = 'show no result found';
@@ -45,30 +45,27 @@ const mainDiv = document.getElementById('main-one');
     };
     const loadPhoneDetail = phoneId => {
         console.log(phoneId);
-       /*  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${phoneId}`;
+       const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => displayMealDetail(data.meals[0])) */
+            .then(data => displayPhoneDetail(data.data)) 
     };
+    const displayPhoneDetail = phone => {
+        console.log(phone);
+        const phoneDetails = document.getElementById('phone-details');
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <img src=" ${phone.image} " class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> ${phone.slug} </h5>
+                <p class="card-text"> ${phone.releaseDate ? phone.releaseDate:'No Release Date Found' } </p>
+            </div>
+        `;
+        phoneDetails.appendChild(div);
+        mainDiv.innerHTML = '';
+    }
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
