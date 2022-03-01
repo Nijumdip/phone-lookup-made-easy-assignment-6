@@ -22,7 +22,7 @@ const mainDiv = document.getElementById('main-one');
     const displayPhones = phones => {
         // console.log(phones);
         const first20Phones = phones.slice(0, 20);
-        console.log(first20Phones);
+        // console.log(first20Phones);
         /* if (phones.length == 0) {
             error.innerText = 'show no result found';
         }
@@ -33,8 +33,8 @@ const mainDiv = document.getElementById('main-one');
             div.classList.add("col-lg-4", 'col-sm-1');
             div.classList.add("mb-5", 'mt-5');
             div.innerHTML = `
-                <div class="card p-2 rounded" style="width: 18rem;">
-                    <img src="${phone.image}" class="card-img-top" alt="...">
+            <div class="card p-2 rounded" style="width: 18rem;">
+            <img src="${phone.image}" class="card-img-top" alt="...">
                     <div class="card-body">
                             <h5 class="card-title">${phone.phone_name}</h5>
                             <p class="card-text">${phone.brand}</p>
@@ -57,10 +57,17 @@ const mainDiv = document.getElementById('main-one');
         const phoneDetails = document.getElementById('phone-details');
         const div = document.createElement('div');
         div.innerHTML = `
-            <img src=" ${phone.image} " class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"> ${phone.slug} </h5>
-                <p class="card-text"> ${phone.releaseDate ? phone.releaseDate:'No Release Date Found' } </p>
+            <div class="card p-2 rounded" style="width: 18rem;">
+                <img src=" ${phone.image} " class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> ${phone.slug} </h5>
+                    <h6>${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}
+                    </h6>
+                    <p> ${phone.mainFeatures.storage} </p>
+                    <p> ${phone.mainFeatures.displaySize} </p>
+                    <p> ${phone.mainFeatures.chipSet} </p>
+                    <p> ${phone.mainFeatures.memory} </p>
+                </div>
             </div>
         `;
         phoneDetails.appendChild(div);
