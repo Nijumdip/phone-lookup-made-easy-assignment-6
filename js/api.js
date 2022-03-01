@@ -65,14 +65,14 @@ const displayPhoneDetail = phone => {
                         Storage: ${phone.mainFeatures.storage}. <br/>
                         DisplaySize: ${phone.mainFeatures.displaySize}. <br/>
                         ChipSet: ${phone.mainFeatures.chipSet}. <br/>
-                        Memory: ${phone.mainFeatures.memory}. <br/>
+                        Memory: ${phone.mainFeatures.memory}. 
                     </p>
                     <p> <b> Sensors:</b> <br/>
-                        ${phone.mainFeatures.sensors[0]}. <br/>
-                        ${phone.mainFeatures.sensors[1]}. <br/>
-                        ${phone.mainFeatures.sensors[2]}. <br/>
-                        ${phone.mainFeatures.sensors[3]}. <br/>
-                        ${phone.mainFeatures.sensors[4]}. <br/>
+                        ${phone.mainFeatures.sensors[0]}.
+                        ${phone.mainFeatures.sensors[1]}.
+                        ${phone.mainFeatures.sensors[2]}.
+                        ${phone.mainFeatures.sensors[3]}. 
+                        ${phone.mainFeatures.sensors[4]}. 
                     </p>
 
                     <p> <b> Others: </b> <br>
