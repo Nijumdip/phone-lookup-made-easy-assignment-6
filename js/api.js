@@ -54,6 +54,7 @@ const phoneDetails = document.getElementById('phone-details');
     }
     const displayPhoneDetail = phone => {
         const div = document.createElement('div');
+        phoneDetails.innerHTML = '';
         div.classList.add("d-flex", "justify-content-center");
         div.innerHTML = `
             <div class="card p-2 rounded single-card">
